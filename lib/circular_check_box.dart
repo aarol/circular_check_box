@@ -22,8 +22,8 @@ import 'package:flutter/widgets.dart';
 /// {@tool dartpad --template=stateful_widget_scaffold_center}
 ///
 /// This example shows how you can override the default theme of
-/// of a [CircularCheckbox] with a [MaterialStateProperty].
-/// In this example, the checkbox's color will be `Colors.blue` when the [CircularCheckbox]
+/// of a [CircularCheckBox] with a [MaterialStateProperty].
+/// In this example, the checkbox's color will be `Colors.blue` when the [CircularCheckBox]
 /// is being pressed, hovered, or focused. Otherwise, the checkbox's color will
 /// be `Colors.red`.
 ///
@@ -61,12 +61,12 @@ import 'package:flutter/widgets.dart';
 ///
 ///  * [CheckboxListTile], which combines this widget with a [ListTile] so that
 ///    you can give the checkbox a label.
-///  * [Switch], a widget with semantics similar to [CircularCheckbox].
+///  * [Switch], a widget with semantics similar to [CircularCheckBox].
 ///  * [Radio], for selecting among a set of explicit values.
 ///  * [Slider], for selecting a value in a range.
 ///  * <https://material.io/design/components/selection-controls.html#checkboxes>
 ///  * <https://material.io/design/components/lists.html#types>
-class CircularCheckbox extends StatefulWidget {
+class CircularCheckBox extends StatefulWidget {
   /// Creates a material design checkbox.
   ///
   /// The checkbox itself does not maintain any state. Instead, when the state of
@@ -83,7 +83,7 @@ class CircularCheckbox extends StatefulWidget {
   ///   change. It can be set to null to disable the checkbox.
   ///
   /// The values of [tristate] and [autofocus] must not be null.
-  const CircularCheckbox({
+  const CircularCheckBox({
     Key? key,
     required this.value,
     this.tristate = false,
@@ -312,10 +312,10 @@ class CircularCheckbox extends StatefulWidget {
   static const double width = 18.0;
 
   @override
-  _CircularCheckboxState createState() => _CircularCheckboxState();
+  _CircularCheckBoxState createState() => _CircularCheckBoxState();
 }
 
-class _CircularCheckboxState extends State<CircularCheckbox>
+class _CircularCheckBoxState extends State<CircularCheckBox>
     with TickerProviderStateMixin, ToggleableStateMixin {
   final _CheckboxPainter _painter = _CheckboxPainter();
   bool? _previousValue;
@@ -327,7 +327,7 @@ class _CircularCheckboxState extends State<CircularCheckbox>
   }
 
   @override
-  void didUpdateWidget(CircularCheckbox oldWidget) {
+  void didUpdateWidget(CircularCheckBox oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.value != widget.value) {
       _previousValue = oldWidget.value;
@@ -493,7 +493,7 @@ class _CircularCheckboxState extends State<CircularCheckbox>
   }
 }
 
-const double _kEdgeSize = CircularCheckbox.width;
+const double _kEdgeSize = CircularCheckBox.width;
 const double _kStrokeWidth = 2.0;
 
 class _CheckboxPainter extends ToggleablePainter {
